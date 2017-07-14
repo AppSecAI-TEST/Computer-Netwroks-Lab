@@ -1,0 +1,148 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\lab7>hostname
+CS-HP
+
+C:\Users\lab7>getmac
+
+Physical Address    Transport Name
+=================== ==========================================================
+70-5A-0F-35-07-28   \Device\Tcpip_{A3100534-F9F7-4A10-88C3-C06CBB103330}
+
+C:\Users\lab7>ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Local Area Connection:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::6c99:4f86:7c52:6493%11
+   IPv4 Address. . . . . . . . . . . : 172.16.85.44
+   Subnet Mask . . . . . . . . . . . : 255.255.252.0
+   Default Gateway . . . . . . . . . : 172.16.84.1
+
+Tunnel adapter isatap.{A3100534-F9F7-4A10-88C3-C06CBB103330}:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Tunnel adapter Teredo Tunneling Pseudo-Interface:
+
+   Connection-specific DNS Suffix  . :
+   IPv6 Address. . . . . . . . . . . : 2001:0:9d38:6abd:1c66:2680:53ef:aad3
+   Link-local IPv6 Address . . . . . : fe80::1c66:2680:53ef:aad3%13
+   Default Gateway . . . . . . . . . : ::
+
+C:\Users\lab7>arp -a
+
+Interface: 172.16.85.44 --- 0xb
+  Internet Address      Physical Address      Type
+  172.16.84.1           24-e9-b3-70-3b-bf     dynamic
+  172.16.85.1           70-5a-0f-35-06-b9     dynamic
+  172.16.85.2           dc-4a-3e-97-3e-51     dynamic
+  172.16.85.43          70-5a-0f-35-07-20     dynamic
+  172.16.85.58          70-5a-0f-30-b4-a7     dynamic
+  172.16.85.73          00-16-e6-94-20-dd     dynamic
+  172.16.86.18          00-1d-92-29-e9-eb     dynamic
+  172.16.87.255         ff-ff-ff-ff-ff-ff     static
+  224.0.0.22            01-00-5e-00-00-16     static
+  224.0.0.251           01-00-5e-00-00-fb     static
+  224.0.0.252           01-00-5e-00-00-fc     static
+  239.255.255.250       01-00-5e-7f-ff-fa     static
+
+C:\Users\lab7>ping www.google.com
+
+Pinging www.google.com [172.217.26.228] with 32 bytes of data:
+Reply from 172.217.26.228: bytes=32 time=64ms TTL=55
+Reply from 172.217.26.228: bytes=32 time=64ms TTL=55
+Reply from 172.217.26.228: bytes=32 time=64ms TTL=55
+Reply from 172.217.26.228: bytes=32 time=64ms TTL=55
+
+Ping statistics for 172.217.26.228:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 64ms, Maximum = 64ms, Average = 64ms
+
+C:\Users\lab7>tracert
+
+Usage: tracert [-d] [-h maximum_hops] [-j host-list] [-w timeout]
+               [-R] [-S srcaddr] [-4] [-6] target_name
+
+Options:
+    -d                 Do not resolve addresses to hostnames.
+    -h maximum_hops    Maximum number of hops to search for target.
+    -j host-list       Loose source route along host-list (IPv4-only).
+    -w timeout         Wait timeout milliseconds for each reply.
+    -R                 Trace round-trip path (IPv6-only).
+    -S srcaddr         Source address to use (IPv6-only).
+    -4                 Force using IPv4.
+    -6                 Force using IPv6.
+
+C:\Users\lab7>netstat -oa
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State           PID
+  TCP    0.0.0.0:135            CS-HP:0                LISTENING       912
+  TCP    0.0.0.0:445            CS-HP:0                LISTENING       4
+  TCP    0.0.0.0:8092           CS-HP:0                LISTENING       4
+  TCP    0.0.0.0:49152          CS-HP:0                LISTENING       608
+  TCP    0.0.0.0:49153          CS-HP:0                LISTENING       456
+  TCP    0.0.0.0:49154          CS-HP:0                LISTENING       600
+  TCP    0.0.0.0:49155          CS-HP:0                LISTENING       700
+  TCP    0.0.0.0:49162          CS-HP:0                LISTENING       668
+  TCP    127.0.0.1:5354         CS-HP:0                LISTENING       1788
+  TCP    127.0.0.1:49180        CS-HP:49181            ESTABLISHED     4108
+  TCP    127.0.0.1:49181        CS-HP:49180            ESTABLISHED     4108
+  TCP    127.0.0.1:49183        CS-HP:49184            ESTABLISHED     4368
+  TCP    127.0.0.1:49184        CS-HP:49183            ESTABLISHED     4368
+  TCP    127.0.0.1:49760        CS-HP:49761            ESTABLISHED     5756
+  TCP    127.0.0.1:49761        CS-HP:49760            ESTABLISHED     5756
+  TCP    127.0.0.1:49765        CS-HP:49766            ESTABLISHED     5176
+  TCP    127.0.0.1:49766        CS-HP:49765            ESTABLISHED     5176
+  TCP    172.16.85.44:139       CS-HP:0                LISTENING       4
+  TCP    172.16.85.44:50430     172.16.1.1:8090        ESTABLISHED     4108
+  TCP    172.16.85.44:50434     ec2-23-23-99-12:http   ESTABLISHED     5756
+  TCP    172.16.85.44:50435     58.27.86.224:http      ESTABLISHED     5756
+  TCP    172.16.85.44:50436     stackoverflow:https    ESTABLISHED     5756
+  TCP    [::]:135               CS-HP:0                LISTENING       912
+  TCP    [::]:445               CS-HP:0                LISTENING       4
+  TCP    [::]:8092              CS-HP:0                LISTENING       4
+  TCP    [::]:49152             CS-HP:0                LISTENING       608
+  TCP    [::]:49153             CS-HP:0                LISTENING       456
+  TCP    [::]:49154             CS-HP:0                LISTENING       600
+  TCP    [::]:49155             CS-HP:0                LISTENING       700
+  TCP    [::]:49162             CS-HP:0                LISTENING       668
+  TCP    [::1]:49295            CS-HP:0                LISTENING       1240
+  UDP    0.0.0.0:500            *:*                                    600
+  UDP    0.0.0.0:1237           *:*                                    1568
+  UDP    0.0.0.0:4500           *:*                                    600
+  UDP    0.0.0.0:5355           *:*                                    1348
+  UDP    0.0.0.0:56009          *:*                                    1788
+  UDP    0.0.0.0:56011          *:*                                    1568
+  UDP    0.0.0.0:56012          *:*                                    1568
+  UDP    0.0.0.0:57970          *:*                                    1848
+  UDP    127.0.0.1:1900         *:*                                    2416
+  UDP    127.0.0.1:52523        *:*                                    2416
+  UDP    172.16.85.44:137       *:*                                    4
+  UDP    172.16.85.44:138       *:*                                    4
+  UDP    172.16.85.44:1900      *:*                                    2416
+  UDP    172.16.85.44:5353      *:*                                    1788
+  UDP    172.16.85.44:52522     *:*                                    2416
+  UDP    [::]:500               *:*                                    600
+  UDP    [::]:1238              *:*                                    1568
+  UDP    [::]:4500              *:*                                    600
+  UDP    [::]:5355              *:*                                    1348
+  UDP    [::]:56010             *:*                                    1788
+  UDP    [::]:56012             *:*                                    1568
+  UDP    [::1]:1900             *:*                                    2416
+  UDP    [::1]:5353             *:*                                    1788
+  UDP    [::1]:52521            *:*                                    2416
+  UDP    [fe80::6c99:4f86:7c52:6493%11]:1900  *:*
+     2416
+  UDP    [fe80::6c99:4f86:7c52:6493%11]:52520  *:*
+      2416
+
+C:\Users\lab7>
