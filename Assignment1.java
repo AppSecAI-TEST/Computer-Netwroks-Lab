@@ -32,6 +32,28 @@ public class Assignment1
             }
             String mac = sb.toString();
             System.out.println("MAC Address : "+mac);
+            
+            System.out.println("Enter ip address");
+            ip = br.readLine();
+            String st="";
+            for(int i=0;i<ip.length()&&ip.charAt(i)!='.';i++)
+            {
+                st=st+ip.charAt(i);
+            }
+            int x = Integer.parseInt(st);
+            if(x>=1&&x<=126)
+                System.out.println("Class A");
+            else if(x>=128&&x<=191)
+                System.out.println("Class B");
+            else if(x>=192&&x<=223)
+                System.out.println("Class C");
+            else if(x>=224&&x<=239)
+                System.out.println("Class D");
+            else if(x>=240&&x<=254)
+                System.out.println("Class E");
+            else
+                System.out.println("No class found");
+            
         }
         catch(Exception e)
         {
