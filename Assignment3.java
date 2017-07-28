@@ -22,6 +22,9 @@ public class Assignment3
            Socket s = new Socket(ip,135);
            System.out.println("Local Port Number : "+s.getLocalPort());
            s.close();
+           InetAddress ip1 = InetAddress.getByName("172.16.86.222");
+           Socket o = new Socket(ip1,80);
+           System.out.println("Port Number : "+o.getPort());
            for(int i = 1;i<=1023;i++)
            {
                try{
