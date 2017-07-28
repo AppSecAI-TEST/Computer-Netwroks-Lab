@@ -1,0 +1,17 @@
+try {
+            ProcessBuilder builder = new ProcessBuilder(
+            "cmd.exe", "/c", "ipconfig /all");
+            builder.redirectErrorStream(true);
+            Process p = builder.start();
+            BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+            String line;
+            while (true) {
+                line = r.readLine();
+                if (line == null) { break; }
+                else if(line.contains("adapter"))
+                    System.out.println(line);
+                else if(line.contains("Physical Address")){
+                    System.out.println(line.substring(38));
+                }
+            }
+        } catch (IOException ex) {}
